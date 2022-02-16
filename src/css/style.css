@@ -38,7 +38,44 @@ header h1{
 /* = = = = = = = = = = HERO = = = = = = = = = = */
 .hero{
   grid-area: hero;
+  height: 89vh; /* viewport height - 1/100 da altura da viewport */
+  background: url(../images/lemons.jpg) center center no-repeat; /* center: horizontal e vertical */
+  background-size: cover;
+  display: flex;
+  justify-content: center; /* alinhando horizontalmente */
+  align-items: center; /* meio da div */
+  position: relative; /* usado pra setinha tb */
+
 }
+.hero h2{
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 4rem; /* 40px */
+}
+/* - - - seta  */
+.hero:after{
+  content: url('../images/seta_preta.png');
+  height: 35px;
+  bottom: 40px;
+  position: absolute;
+  animation: downarrow 0.6s infinite alternate ease-in-out;
+}
+ /* - - - ativando seta  */
+@-webkit-keyframes downarrow{
+  0%    { -webkit-transform: translateY(0); opacity: 0.5;}
+  100%  { -webkit-transform: translateY(0.4em); opacity: 0.9;}
+}
+/* responsivo  */
+@media(max-width: 425px){
+  .hero{
+    height: 60vh;
+  }
+  .hero h2{
+    font-size: 2.5rem; /* proporcional ao tamanho */
+  }
+}
+
+
 /* = = = = = = = = = = ABOUT = = = = = = = = = = */
 .about{
   grid-area: about;
